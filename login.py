@@ -9,12 +9,12 @@ class Login():
         self.parent = parent
         self.parent.title(title)
         self.parent.protocol("WM_DELETE_WINDOWS", self.keluar)
-        lebar = 250
-        tinggi = 130
-        setTengahX = (self.parent.winfo_screenwidth()-lebar)//2
-        setTengahY = (self.parent.winfo_screenheight()-tinggi)//2
+        width = 200
+        height = 130
+        setTengahX = (self.parent.winfo_screenwidth()-width)//2
+        setTengahY = (self.parent.winfo_screenheight()-height)//2
         self.parent.geometry("%ix%i+%i+%i" %
-                             (lebar, tinggi, setTengahX, setTengahY))
+                             (width, height, setTengahX, setTengahY))
         self.parent.resizable(False, False)
         self.tampilan()
 
@@ -49,10 +49,10 @@ class Login():
         self.labelUsername.grid(row=1, column=1)
         self.labelPassword = Label(
             frameUtama, text="Password", width=9, height=2)
-        self.labelPassword.grid(row=2, column=1, )
-        self.entryUsername = Entry(frameUtama, width=25)
+        self.labelPassword.grid(row=2, column=1)
+        self.entryUsername = Entry(frameUtama, width=15)
         self.entryUsername.grid(row=1, column=2)
-        self.entryPassword = Entry(frameUtama, show='*', width=25)
+        self.entryPassword = Entry(frameUtama, show='*', width=15)
         self.entryPassword.grid(row=2, column=2)
         self.btnLogin = Button(frameUtama, text='Login',
                                command=self.cekuser, width=10)
@@ -61,5 +61,5 @@ class Login():
 
 
 root = Tk()
-Login(root, "-- Form Login --")
+Login(root, "Login")
 root.mainloop()
